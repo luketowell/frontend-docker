@@ -10,5 +10,5 @@ RUN npm run build
 
 #nginx step for running the build version of the application
 FROM nginx
-
+EXPOSE 80
 COPY --from=builder /usr/app/build /usr/share/nginx/html
