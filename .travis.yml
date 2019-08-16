@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t luketowell/frontend-docker -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true luketowell/frontend-docker npm run test
