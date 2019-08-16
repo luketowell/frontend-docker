@@ -1,9 +1,25 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Docker build command
-docker build -f Dockerfile.dev .
+- The below command builds from the dockerfile.dev build file.
+`docker build -f Dockerfile.dev .`
 
-docker build -f Dockerfile.prod . 
+making use of the docker volumes in order to monitor the files in the current directory.
+- ```docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/usr/app 9c1e84fdfe3f```
+- This command maps the appropriate ports but then it maps the volumes for the app/node_modules and then also maps all of the files within the current working directory to the specific location in the container.
+
+## docker-compose
+- The docker-compose setup of the application contains two services: the web service and the test service. the test service is solely used for running tests whilst the web service is used for running and monitoring the application files. 
+- 
+- When the files are updated the application will be relaunched and tests will be re-ran.
+- in order to build both applications:
+- `docker-compose up --build`
+
+- in order to run single services:
+- `docker-compose up <service name>`
+
+
+
 
 ## Available Scripts
 
