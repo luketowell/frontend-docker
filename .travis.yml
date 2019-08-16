@@ -10,10 +10,9 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  access_key_id: 
-    secure: "Encrypted <access-key-id>=AKIAIUMA6RM7KVXOOZSA"
+  access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
-    secure: "Encypted <secret-access-key>=syN7hsghujN8k7GWuXkqf/eOYiOVfFEhj3H8LUNB"
+    secure: $AWS_SECRET_KEY
   region: "eu-west-2"  
   app: "frontend-docker"
   env: "FrontendDocker-env"
