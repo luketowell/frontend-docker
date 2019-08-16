@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          This has been changed
+          This is a text channge in order to check travis ci automatic deployments
         </p>
         <a
           className="App-link"
